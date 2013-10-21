@@ -1,0 +1,5 @@
+class AdminAndGuest < ActiveRecord::Migration
+  def change
+	User.create( :bday => Time.now, :first_name => 'Yuri', :hobby => 'PC', :is_admin => true, :last_name => 'Panchenko', :password => '123', :soname => 'Nicolaevich', :username => 'Admin')
+  end
+end

@@ -1,0 +1,22 @@
+require "active_record"
+require 'yaml'
+#dbconfig = YAML::load(File.open('./db/database.yml'))
+#ActiveRecord::Base.establish_connection(dbconfig)
+ActiveRecord::Base.establish_connection(:adapter  => 'mysql2', :database => 'dosblog', :username => 'root', :password => '0034aff', :host     => 'localhost')
+
+
+class User < ActiveRecord::Base
+  attr_accessible :avatar_path, :bday, :first_name, :hobby, :is_admin, :last_name, :password, :soname, :username
+  has_many :comments
+  has_many :messages
+
+  def authenticate(passwd)   #проверка пароля
+    puts passwd
+    puts self.password
+    if self.password == passwd
+      true
+    else
+      false
+    end
+  end
+end

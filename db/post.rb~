@@ -1,0 +1,4 @@
+class Message < ActiveRecord::Base
+  attr_accessible :date, :text, :user_id
+  hasm_many :comments
+end

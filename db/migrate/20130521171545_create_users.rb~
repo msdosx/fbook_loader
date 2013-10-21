@@ -1,0 +1,32 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :username
+      t.string :password
+      t.date   :bday
+	t.string :avatar_path, :default => null
+	t.string :hobby , :default => null
+	t.boolean :is_admin, :default => false
+	 t.timestamps
+    end
+	add_index :users, :username, :unique=>true
+		
+     create_table :messages do |t|
+	t.string :by_user
+	t.datetime :date
+	t.text	:message
+ 	t.timestamps
+    	end
+	#add_index :messages, :by_user
+ 	
+	create_table :comments do |t|
+	t.string :by_user
+	t.datetime :date
+	t.text :comment
+	t.integer :owner_message_id  	
+     	t.timestamps
+    end
+	#add_index :comments, :by_user
+	#add_index :comments, :message_id
+  end
+end
