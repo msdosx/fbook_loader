@@ -1,7 +1,7 @@
-require 'sinatra/base'
-require 'koala'
-require 'active_record'
-require 'rubygems'
+#require 'sinatra/base'
+#require 'koala'
+#require 'active_record'
+#require 'rubygems'
 module App_helper
   def App_helper::save_comment(data, post)
     unless data['comments'].nil?

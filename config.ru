@@ -2,8 +2,11 @@ require 'sinatra/base'
 require 'koala'
 require 'active_record'
 require 'rubygems'
-
-Dir.glob('./{helpers,controllers,models}/*.rb').each { |file| require file }
+require 'yaml'
+require 'sinatra/activerecord'
+require './models/init.rb'
+require './helpers/init.rb'
+require './controllers/app.rb'
 
 map('/app')
 

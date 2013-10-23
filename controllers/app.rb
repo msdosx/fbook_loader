@@ -1,7 +1,5 @@
-require './models/comment.rb'
-require './models/post.rb'
-require './models/opinion.rb'
-require './models/tag.rb'
+
+
 class App < Sinatra::Base
   helpers App_helper
   #loop do
@@ -17,5 +15,4 @@ class App < Sinatra::Base
   #  sleep 20.minutes
  # end
     run! if App == $0
-  end
-
+end
